@@ -188,7 +188,7 @@ header {
     width: 100%;
     z-index: 1000;
     background-color: transparent;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -270,7 +270,7 @@ header {
 }
 
 .hero-text p {
-    font-size: clamp(0.5rem, 2vw, 1.25rem);
+    font-size: clamp(0.7rem, 2vw, 1.25rem);
     margin: 1rem 0;
     font-weight: 300;
 }
