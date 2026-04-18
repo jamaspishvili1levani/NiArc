@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="index.css">
     <title>NiArc</title>
 </head>
 
@@ -208,28 +209,7 @@
         </div>
     </footer>
 
-    <script>
-        const burgerMenu = document.getElementById('burgerMenu');
-        const sideMenu = document.getElementById('sideMenu');
-
-        if (burgerMenu && sideMenu) {
-            burgerMenu.addEventListener('click', () => {
-                burgerMenu.classList.toggle('active');
-                sideMenu.classList.toggle('active');
-            });
-        }
-
-        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        if (toggleSwitch) {
-            toggleSwitch.addEventListener('change', (e) => {
-                if (e.target.checked) {
-                    document.body.classList.add('dark-mode');
-                } else {
-                    document.body.classList.remove('dark-mode');
-                }
-            });
-        }
-    </script>
+    <script src="layout.js"></script>
 
 </body>
 

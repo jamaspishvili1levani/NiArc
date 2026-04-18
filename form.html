@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="form.css">
+    <title>NiArc</title>
+</head>
+
+<body>
+
+
+    <aside class="side-menu" id="sideMenu">
+        <ul class="menu-links">
+
+            <nav>
+                <li><a href="#">Support</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#" class="logout-text">Log out</a></li>
+            </nav>
+
+
+            <li class="menu-theme-toggle">
+                <span>Dark Theme</span>
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </li>
+
+        </ul>
+    </aside>
+
+    <header>
+
+        <div id="burgerMenu" class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <a href="./home.html" class="logo">NiArc</a>
+
+        <nav class="sign">
+            <a href="#">Sign in</a>
+            <span>/</span>
+            <a href="#">Sign up</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="choose section">
+            <div class="form-design container">
+
+                <form action="/submit-form" method="POST">
+
+                    <fieldset>
+                        <legend>პირადი ინფორმაცია</legend>
+                        <div>
+                            <label for="first_name">სახელი:</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                        </div>
+                        <div>
+                            <label for="last_name">გვარი:</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                        </div>
+                        <div>
+                            <label for="id_number">პირადი ნომერი:</label>
+                            <input type="text" id="id_number" name="id_number">
+                        </div>
+                        <div>
+                            <label for="phone">ტელეფონის ნომერი:</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend> საერთო ინფორმაცია</legend>
+                        <div>
+                            <label for="prop_type">ობიექტის ტიპი:</label>
+                            <select id="prop_type" name="property_type">
+                                <option value="apartment">ბინა</option>
+                                <option value="house">კერძო სახლი</option>
+                                <option value="duplex">დუპლექსი</option>
+                                <option value="other">სხვა</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="area">საერთო ფართი (მ²):</label>
+                            <input type="number" id="area" name="total_area">
+                        </div>
+                        <div>
+                            <label for="floors">სართულიანობა:</label>
+                            <select id="floors" name="floors">
+                                <option value="1">1 სართული</option>
+                                <option value="2">2 სართული</option>
+                                <option value="3">3 სართული</option>
+                                <option value="more">მეტი</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="location">ლოკაცია:</label>
+                            <input type="text" id="location" name="location">
+                        </div>
+                        <div>
+                            <p>პროექტის ტიპი:</p>
+                            <input type="radio" id="renovation" name="project_type" value="renovation">
+                            <label for="renovation">რემონტი</label>
+                            <input type="radio" id="new_build" name="project_type" value="new_build">
+                            <label for="new_build">ახალი მშენებლობა</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>ოთახები</legend>
+                        <div>
+                            <label for="bedrooms">საძინებლების რაოდენობა:</label>
+                            <input type="number" id="bedrooms" name="bedrooms_count">
+                        </div>
+                        <div>
+                            <p>სასტუმრო ოთახი:</p>
+                            <input type="radio" id="living_yes" name="living_room" value="yes"> <label
+                                for="living_yes">დიახ</label>
+                            <input type="radio" id="living_no" name="living_room" value="no"> <label
+                                for="living_no">არა</label>
+                        </div>
+                        <div>
+                            <p>სამზარეულო:</p>
+                            <input type="radio" id="kitchen_sep" name="kitchen_type" value="separate"> <label
+                                for="kitchen_sep">ცალკე</label>
+                            <input type="radio" id="kitchen_studio" name="kitchen_type" value="studio"> <label
+                                for="kitchen_studio">სტუდიო</label>
+                        </div>
+                        <div>
+                            <p>სასადილო ზონა:</p>
+                            <input type="radio" id="dining_yes" name="dining_zone" value="yes"> <label
+                                for="dining_yes">დიახ</label>
+                            <input type="radio" id="dining_no" name="dining_zone" value="no"> <label
+                                for="dining_no">არა</label>
+                        </div>
+                        <div>
+                            <p>სამუშაო ოთახი / კაბინეტი:</p>
+                            <input type="radio" id="office_yes" name="office" value="yes"> <label
+                                for="office_yes">დიახ</label>
+                            <input type="radio" id="office_no" name="office" value="no"> <label
+                                for="office_no">არა</label>
+                        </div>
+                        <div>
+                            <p>საბავშვო ოთახი:</p>
+                            <input type="radio" id="kids_yes" name="kids_room" value="yes"> <label
+                                for="kids_yes">დიახ</label>
+                            <input type="radio" id="kids_no" name="kids_room" value="no"> <label
+                                for="kids_no">არა</label>
+                        </div>
+                        <div>
+                            <label for="wardrobe">საგარდერობე (რაოდენობა / არა):</label>
+                            <input type="text" id="wardrobe" name="wardrobe" placeholder="მაგ: 2 ან არა">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>სველი წერტილები</legend>
+                        <div>
+                            <label for="bathrooms_count">სველი წერტილების რაოდენობა:</label>
+                            <input type="number" id="bathrooms_count" name="bathrooms_count">
+                        </div>
+                        <div>
+                            <p>აბაზანა:</p>
+                            <input type="checkbox" id="bath" name="bath_type" value="bath"> <label
+                                for="bath">აბაზანა</label>
+                            <input type="checkbox" id="shower" name="bath_type" value="shower"> <label
+                                for="shower">საშხაპე</label>
+                        </div>
+                        <div>
+                            <p>საპირფარეშოს ტიპი:</p>
+                            <input type="radio" id="wc_combined" name="wc_type" value="combined"> <label
+                                for="wc_combined">გაერთიანებული</label>
+                            <input type="radio" id="wc_sep" name="wc_type" value="separate"> <label
+                                for="wc_sep">ცალკე</label>
+                        </div>
+                        <div>
+                            <p>სარეცხი ზონა:</p>
+                            <input type="radio" id="laundry_yes" name="laundry" value="yes"> <label
+                                for="laundry_yes">დიახ</label>
+                            <input type="radio" id="laundry_no" name="laundry" value="no"> <label
+                                for="laundry_no">არა</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>გარე სივრცეები</legend>
+                        <div>
+                            <label for="balcony">აივანი / ტერასა (მ²):</label>
+                            <input type="text" id="balcony" name="balcony_area">
+                        </div>
+                        <div>
+                            <label for="yard">ეზო (მ²):</label>
+                            <input type="text" id="yard" name="yard_area">
+                        </div>
+                        <div>
+                            <label for="garage">ავტოფარეხი (მ²):</label>
+                            <input type="text" id="garage" name="garage_area">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>ტექნიკური მოთხოვნები</legend>
+                        <div>
+                            <label for="heating">გათბობის სისტემა:</label>
+                            <input type="text" id="heating" name="heating">
+                        </div>
+                        <div>
+                            <label for="cooling">გაგრილება:</label>
+                            <input type="text" id="cooling" name="cooling">
+                        </div>
+                        <div>
+                            <p>იატაკქვეშა გათბობა:</p>
+                            <input type="radio" id="floor_heat_yes" name="floor_heating" value="yes"> <label
+                                for="floor_heat_yes">დიახ</label>
+                            <input type="radio" id="floor_heat_no" name="floor_heating" value="no"> <label
+                                for="floor_heat_no">არა</label>
+                        </div>
+                        <div>
+                            <p>ჭკვიანი სახლის სისტემა:</p>
+                            <input type="radio" id="smart_yes" name="smart_home" value="yes"> <label
+                                for="smart_yes">დიახ</label>
+                            <input type="radio" id="smart_no" name="smart_home" value="no"> <label
+                                for="smart_no">არა</label>
+                        </div>
+                        <div>
+                            <label for="storage">დამატებითი სათავსოები:</label>
+                            <input type="text" id="storage" name="storage" placeholder="სათავსო / საკუჭნაო">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>მომხმარებლის ინფორმაცია</legend>
+                        <div>
+                            <label for="residents">მოსახლეთა რაოდენობა:</label>
+                            <input type="number" id="residents" name="residents_count">
+                        </div>
+                        <div>
+                            <label for="children">ბავშვები (რაოდენობა / არა):</label>
+                            <input type="text" id="children" name="children">
+                        </div>
+                        <div>
+                            <p>შინაური ცხოველები:</p>
+                            <input type="radio" id="pets_yes" name="pets" value="yes"> <label
+                                for="pets_yes">დიახ</label>
+                            <input type="radio" id="pets_no" name="pets" value="no"> <label for="pets_no">არა</label>
+                        </div>
+                        <div>
+                            <label for="lifestyle">ცხოვრების სტილი:</label>
+                            <input type="text" id="lifestyle" name="lifestyle" placeholder="აქტიური, მშვიდი და ა.შ.">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>დამატებითი მოთხოვნები</legend>
+                        <label for="notes">განსაკუთრებული სურვილები / შენიშვნები:</label><br>
+                        <textarea id="notes" name="notes" rows="5" cols="40" placeholder="ჩაწერეთ აქ..."></textarea>
+                    </fieldset>
+
+                    <br>
+                    <button type="submit">მონაცემების გაგზავნა</button>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">NiArc</div>
+                <p>Minimalist Design Studio</p>
+            </div>
+            <div class="footer-col" id="contact">
+                <h4>Contact</h4>
+                <p>contact@niarc.gmail.com</p>
+                <p>+995 555 123 456</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul class="social-list">
+                    <li><a href="#" class="fb-hover">Facebook</a></li>
+                    <li><a href="#" class="insta-hover">Instagram</a></li>
+                    <li><a href="#" class="tt-hover">TikTok</a></li>
+                    <li><a href="#" class="li-hover">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="layout.js"></script>
+
+</body>
+
+</html>
