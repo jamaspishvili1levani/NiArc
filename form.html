@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 
 <head>
     <meta charset="UTF-8">
@@ -14,25 +14,21 @@
 
 
     <aside class="side-menu" id="sideMenu">
-        <ul class="menu-links">
-
-            <nav>
+        <nav aria-label="Side navigation">
+            <ul class="menu-links">
                 <li><a href="#">Support</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#about-us">About Us</a></li>
+                <li><a href="./index.html#about-us">About Us</a></li>
                 <li><a href="#" class="logout-text">Log out</a></li>
-            </nav>
-
-
-            <li class="menu-theme-toggle">
-                <span>Dark Theme</span>
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-            </li>
-
-        </ul>
+                <li class="menu-theme-toggle">
+                    <span>Dark Theme</span>
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </li>
+            </ul>
+        </nav>
     </aside>
 
     <header>
@@ -43,9 +39,9 @@
             <span></span>
         </div>
 
-        <a href="./home.html" class="logo">NiArc</a>
+        <a href="./form.html" class="logo">NiArc</a>
 
-        <nav class="sign">
+        <nav class="sign" aria-label="Account">
             <a href="#">Sign in</a>
             <span>/</span>
             <a href="#">Sign up</a>
@@ -57,219 +53,331 @@
 
         <section class="choose section">
             <div class="form-design container">
-
-                <form action="/submit-form" method="POST">
+                <form class="project-form" action="/submit-form" method="POST">
+                    <h1>FORM</h1>
+                    <p class="form-intro">შეავსეთ მაქსიმალურად დეტალურად, რათა დიზაინერმა ზუსტად გაიგოს თქვენი
+                        საჭიროებები, ბიუჯეტი და სტილი.</p>
 
                     <fieldset>
-                        <legend>პირადი ინფორმაცია</legend>
-                        <div>
-                            <label for="first_name">სახელი:</label>
-                            <input type="text" id="first_name" name="first_name" required>
-                        </div>
-                        <div>
-                            <label for="last_name">გვარი:</label>
-                            <input type="text" id="last_name" name="last_name" required>
-                        </div>
-                        <div>
-                            <label for="id_number">პირადი ნომერი:</label>
-                            <input type="text" id="id_number" name="id_number">
-                        </div>
-                        <div>
-                            <label for="phone">ტელეფონის ნომერი:</label>
-                            <input type="tel" id="phone" name="phone">
+                        <legend>საკონტაქტო ინფორმაცია</legend>
+                        <div class="form-grid two-col">
+                            <label>სახელი
+                                <input type="text" name="first_name" required>
+                            </label>
+                            <label>გვარი
+                                <input type="text" name="last_name" required>
+                            </label>
+                            <label>პირადი ნომერი
+                                <input type="text" name="personal_id" pattern="[0-9]{11}" placeholder="11 ციფრი">
+                            </label>
+                            <label>ტელეფონის ნომერი
+                                <input type="tel" name="phone" required>
+                            </label>
+                            <label>ელფოსტა
+                                <input type="email" name="email" required>
+                            </label>
+                            <label>სასურველი კომუნიკაცია
+                                <select name="contact_channel">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="phone">ტელეფონი</option>
+                                    <option value="facebook">Facebook</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="whatsapp">WhatsApp</option>
+                                    <option value="telegram">Telegram</option>
+                                    <option value="viber">Viber</option>
+                                    <option value="email">ელფოსტა</option>
+                                    <option value="other">სხვა</option>
+                                </select>
+                            </label>
                         </div>
                     </fieldset>
 
                     <fieldset>
-                        <legend> საერთო ინფორმაცია</legend>
-                        <div>
-                            <label for="prop_type">ობიექტის ტიპი:</label>
-                            <select id="prop_type" name="property_type">
-                                <option value="apartment">ბინა</option>
-                                <option value="house">კერძო სახლი</option>
-                                <option value="duplex">დუპლექსი</option>
-                                <option value="other">სხვა</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="area">საერთო ფართი (მ²):</label>
-                            <input type="number" id="area" name="total_area">
-                        </div>
-                        <div>
-                            <label for="floors">სართულიანობა:</label>
-                            <select id="floors" name="floors">
-                                <option value="1">1 სართული</option>
-                                <option value="2">2 სართული</option>
-                                <option value="3">3 სართული</option>
-                                <option value="more">მეტი</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="location">ლოკაცია:</label>
-                            <input type="text" id="location" name="location">
-                        </div>
-                        <div>
-                            <p>პროექტის ტიპი:</p>
-                            <input type="radio" id="renovation" name="project_type" value="renovation">
-                            <label for="renovation">რემონტი</label>
-                            <input type="radio" id="new_build" name="project_type" value="new_build">
-                            <label for="new_build">ახალი მშენებლობა</label>
-                        </div>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>ოთახები</legend>
-                        <div>
-                            <label for="bedrooms">საძინებლების რაოდენობა:</label>
-                            <input type="number" id="bedrooms" name="bedrooms_count">
-                        </div>
-                        <div>
-                            <p>სასტუმრო ოთახი:</p>
-                            <input type="radio" id="living_yes" name="living_room" value="yes"> <label
-                                for="living_yes">დიახ</label>
-                            <input type="radio" id="living_no" name="living_room" value="no"> <label
-                                for="living_no">არა</label>
-                        </div>
-                        <div>
-                            <p>სამზარეულო:</p>
-                            <input type="radio" id="kitchen_sep" name="kitchen_type" value="separate"> <label
-                                for="kitchen_sep">ცალკე</label>
-                            <input type="radio" id="kitchen_studio" name="kitchen_type" value="studio"> <label
-                                for="kitchen_studio">სტუდიო</label>
-                        </div>
-                        <div>
-                            <p>სასადილო ზონა:</p>
-                            <input type="radio" id="dining_yes" name="dining_zone" value="yes"> <label
-                                for="dining_yes">დიახ</label>
-                            <input type="radio" id="dining_no" name="dining_zone" value="no"> <label
-                                for="dining_no">არა</label>
-                        </div>
-                        <div>
-                            <p>სამუშაო ოთახი / კაბინეტი:</p>
-                            <input type="radio" id="office_yes" name="office" value="yes"> <label
-                                for="office_yes">დიახ</label>
-                            <input type="radio" id="office_no" name="office" value="no"> <label
-                                for="office_no">არა</label>
-                        </div>
-                        <div>
-                            <p>საბავშვო ოთახი:</p>
-                            <input type="radio" id="kids_yes" name="kids_room" value="yes"> <label
-                                for="kids_yes">დიახ</label>
-                            <input type="radio" id="kids_no" name="kids_room" value="no"> <label
-                                for="kids_no">არა</label>
-                        </div>
-                        <div>
-                            <label for="wardrobe">საგარდერობე (რაოდენობა / არა):</label>
-                            <input type="text" id="wardrobe" name="wardrobe" placeholder="მაგ: 2 ან არა">
+                        <legend>პროექტის ტიპი და საერთო ინფორმაცია</legend>
+                        <div class="form-grid two-col">
+                            <label>პროექტის მიმართულება
+                                <select name="design_direction" required>
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="interior">ინტერიერი </option>
+                                    <option value="exterior">ექსტერიერი</option>
+                                    <option value="both">ორივე</option>
+                                </select>
+                            </label>
+                            <label>სახლის ტიპი
+                                <select name="property_type" required>
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="apartment">ბინა</option>
+                                    <option value="house">კერძო სახლი</option>
+                                    <option value="duplex">დუპლექსი</option>
+                                    <option value="commercial">კომერციული</option>
+                                    <option value="other">სხვა</option>
+                                </select>
+                            </label>
+                            <label>მთლიანი ფართობი (მ²)
+                                <input type="number" name="total_area" min="0">
+                            </label>
+                            <label>სართულიანობა
+                                <select name="floors">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="1">1 სართული</option>
+                                    <option value="2">2 სართული</option>
+                                    <option value="3">3 სართული</option>
+                                </select>
+                            </label>
+                            <label>მისამართი
+                                <input type="text" name="location">
+                            </label>
+                            <label>პროექტის ტიპი
+                                <select name="project_type" required>
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="renovation">რემონტი</option>
+                                    <option value="new_build">ახალი მშენებლობა</option>
+                                    <option value="partial">ნაწილობრივი განახლება</option>
+                                </select>
+                            </label>
+                            <label>სავარაუდო ბიუჯეტი (GEL)
+                                <input type="number" name="budget" min="0">
+                            </label>
+                            <label>სასურველი დასრულების ვადა
+                                <input type="date" name="deadline">
+                            </label>
                         </div>
                     </fieldset>
 
                     <fieldset>
-                        <legend>სველი წერტილები</legend>
-                        <div>
-                            <label for="bathrooms_count">სველი წერტილების რაოდენობა:</label>
-                            <input type="number" id="bathrooms_count" name="bathrooms_count">
+                        <legend>ინტერიერი- სივრცეები და ფუნქციები</legend>
+                        <div class="form-grid two-col">
+                            <label>სახლის ფართობი (მ²)
+                                <input type="number" name="yard_area" min="0">
+                            </label>
+                            <label>საძინებლების რაოდენობა
+                                <input type="number" name="bedrooms_count" min="0">
+                            </label>
+                            <label>სველი წერტილების რაოდენობა
+                                <input type="number" name="bathrooms_count" min="0">
+                            </label>
+                            <label>სამზარეულოს ტიპი
+                                <select name="kitchen_type">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="separate">ცალკე</option>
+                                    <option value="studio">სტუდიო</option>
+                                </select>
+                            </label>
+                            <label>საპირფარეშოს ტიპი
+                                <select name="wc_type">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="combined">გაერთიანებული</option>
+                                    <option value="separate">ცალკე</option>
+                                </select>
+                            </label>
                         </div>
-                        <div>
-                            <p>აბაზანა:</p>
-                            <input type="checkbox" id="bath" name="bath_type" value="bath"> <label
-                                for="bath">აბაზანა</label>
-                            <input type="checkbox" id="shower" name="bath_type" value="shower"> <label
-                                for="shower">საშხაპე</label>
+                        <p class="group-title">მიუთითეთ რომელი სივრცეები გჭირდებათ:</p>
+                        <div class="checks">
+                            <label><input type="checkbox" name="interior_spaces" value="living_room"> სასტუმრო
+                                ოთახი</label>
+                            <label><input type="checkbox" name="interior_spaces" value="dining_zone"> სასადილო
+                                ზონა</label>
+                            <label><input type="checkbox" name="interior_spaces" value="office"> სამუშაო ოთახი /
+                                კაბინეტი</label>
+                            <label><input type="checkbox" name="interior_spaces" value="kids_room"> საბავშვო
+                                ოთახი</label>
+                            <label><input type="checkbox" name="interior_spaces" value="walk_in_closet">
+                                საგარდერობე</label>
+                            <label><input type="checkbox" name="interior_spaces" value="laundry_zone"> სარეცხი
+                                ზონა</label>
+                            <label><input type="checkbox" name="interior_spaces" value="storage"> სათავსო /
+                                საკუჭნაო</label>
                         </div>
-                        <div>
-                            <p>საპირფარეშოს ტიპი:</p>
-                            <input type="radio" id="wc_combined" name="wc_type" value="combined"> <label
-                                for="wc_combined">გაერთიანებული</label>
-                            <input type="radio" id="wc_sep" name="wc_type" value="separate"> <label
-                                for="wc_sep">ცალკე</label>
+                        <label>დამატებითი ინტერიერის მოთხოვნები
+                            <textarea name="interior_notes" rows="4"
+                                placeholder="დამატებითი ინფორმაცია სურვილის შემთხვევაში"></textarea>
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>ექსტერიერი - ეზო და გარე სივრცეები</legend>
+                        <div class="form-grid two-col">
+                            <label>ეზოს ფართობი (მ²)
+                                <input type="number" name="yard_area" min="0">
+                            </label>
+                            <label>ტერასა / აივანი (მ²)
+                                <input type="number" name="terrace_area" min="0">
+                            </label>
+                            <label>პარკინგის ტიპი
+                                <select name="parking_type">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="garage">გარაჟი</option>
+                                    <option value="covered">გადახურული პარკინგი</option>
+                                    <option value="open">ღია პარკინგი</option>
+                                    <option value="none">არ არის საჭირო</option>
+                                </select>
+                            </label>
+                            <label>პარკირების ადგილების რაოდენობა
+                                <input type="number" name="parking_spots" min="0">
+                            </label>
                         </div>
-                        <div>
-                            <p>სარეცხი ზონა:</p>
-                            <input type="radio" id="laundry_yes" name="laundry" value="yes"> <label
-                                for="laundry_yes">დიახ</label>
-                            <input type="radio" id="laundry_no" name="laundry" value="no"> <label
-                                for="laundry_no">არა</label>
+                        <p class="group-title">სასურველი გარე ელემენტები:</p>
+                        <div class="checks">
+                            <label><input type="checkbox" name="exterior_features" value="bbq"> BBQ / საზაფხულო
+                                სამზარეულო</label>
+                            <label><input type="checkbox" name="exterior_features" value="pool"> აუზი</label>
+                            <label><input type="checkbox" name="exterior_features" value="pergola"> პერგოლა / ჩრდილის
+                                ზონა</label>
+                            <label><input type="checkbox" name="exterior_features" value="kids_zone"> ბავშვების სათამაშო
+                                ზონა</label>
+                            <label><input type="checkbox" name="exterior_features" value="garden"> ბაღი / ხეხილი</label>
+                            <label><input type="checkbox" name="exterior_features" value="lawn"> გაზონი</label>
+                            <label><input type="checkbox" name="exterior_features" value="outdoor_lighting"> გარე
+                                განათება</label>
+                            <label><input type="checkbox" name="exterior_features" value="irrigation"> ავტომატური
+                                სარწყავი სისტემა</label>
+                        </div>
+                        <label>დამატებითი გარე მოთხოვნები
+                            <textarea name="exterior_notes" rows="4"
+                                placeholder="მაგ: მარტივი მოვლა, წყლის ეკონომია, შინაურ ცხოველზე ადაპტირებული ეზო..."></textarea>
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>მასალები, სტილი და დიზაინის პრეფერენციები</legend>
+                        <p class="group-title">იატაკის ტიპი:</p>
+                        <div class="checks">
+                            <label><input type="checkbox" name="floor_type" value="laminate"> ლამინატი</label>
+                            <label><input type="checkbox" name="floor_type" value="parquet"> პარკეტი</label>
+                            <label><input type="checkbox" name="floor_type" value="ceramic"> კერამიკული ფილა</label>
+                            <label><input type="checkbox" name="floor_type" value="vinyl"> ვინილი</label>
+                            <label><input type="checkbox" name="floor_type" value="concrete"> ბეტონი</label>
+                        </div>
+
+                        <p class="group-title">კედლების მოპირკეთება:</p>
+                        <div class="checks">
+                            <label><input type="checkbox" name="wall_finish" value="paint"> საღებავი</label>
+                            <label><input type="checkbox" name="wall_finish" value="wallpaper"> შპალერი</label>
+                            <label><input type="checkbox" name="wall_finish" value="plaster"> დეკორატიული
+                                ბათქაში</label>
+                            <label><input type="checkbox" name="wall_finish" value="panels"> პანელები</label>
+                            <label><input type="checkbox" name="wall_finish" value="brick_effect"> აგურის/ბეტონის
+                                ეფექტი</label>
+                        </div>
+
+                        <div class="form-grid two-col">
+                            <label>ჭერის ტიპი
+                                <select name="ceiling_type">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="standard">სტანდარტული (შეღებილი)</option>
+                                    <option value="stretch">გაჭიმული ჭერი</option>
+                                    <option value="gypsum">გიფსოკარდონი (მრავალსაფეხურიანი)</option>
+                                    <option value="loft">ღია კომუნიკაციები</option>
+                                </select>
+                            </label>
+                            <label>საერთო სტილი
+                                <select name="overall_style">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="minimal">მინიმალიზმი</option>
+                                    <option value="classic">კლასიკა</option>
+                                    <option value="industrial">ინდუსტრიული</option>
+                                    <option value="boho">ბოჰო</option>
+                                    <option value="scandinavian">სკანდინავიური</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <p class="group-title">ფერების პალიტრა:</p>
+                        <div class="checks">
+                            <label><input type="checkbox" name="colors" value="neutral"> ნეიტრალური</label>
+                            <label><input type="checkbox" name="colors" value="pastel"> პასტელური</label>
+                            <label><input type="checkbox" name="colors" value="dark"> მუქი/კონტრასტული</label>
+                            <label><input type="checkbox" name="colors" value="accent"> აქცენტური ფერები</label>
                         </div>
                     </fieldset>
 
                     <fieldset>
-                        <legend>გარე სივრცეები</legend>
-                        <div>
-                            <label for="balcony">აივანი / ტერასა (მ²):</label>
-                            <input type="text" id="balcony" name="balcony_area">
+                        <legend>განათება, ტექნიკა და საინჟინრო ნაწილი</legend>
+                        <p class="group-title">განათების პრიორიტეტები:</p>
+                        <div class="checks">
+                            <label><input type="checkbox" name="lighting" value="main"> ძირითადი განათება</label>
+                            <label><input type="checkbox" name="lighting" value="ceiling_lights"> ჭერის სანათები</label>
+                            <label><input type="checkbox" name="lighting" value="spots"> სპოტები</label>
+                            <label><input type="checkbox" name="lighting" value="wall_lamps"> კედლის ბრები</label>
+                            <label><input type="checkbox" name="lighting" value="floor_lamps"> ტორშერები</label>
+                            <label><input type="checkbox" name="lighting" value="led"> LED ლენტები</label>
+                            <label><input type="checkbox" name="lighting" value="accent"> აქცენტური განათება</label>
                         </div>
-                        <div>
-                            <label for="yard">ეზო (მ²):</label>
-                            <input type="text" id="yard" name="yard_area">
+
+                        <div class="form-grid two-col">
+                            <label>განათების ტემპერატურა
+                                <select name="light_temperature">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="warm">თბილი (2700-3000K)</option>
+                                    <option value="neutral">ნეიტრალური (4000K)</option>
+                                    <option value="cool">ცივი (5000K+)</option>
+                                </select>
+                            </label>
+                            <label>გათბობის სისტემა
+                                <input type="text" name="heating_system"
+                                    placeholder="მაგ: ქვაბი, თბილი იატაკი, რადიატორი">
+                            </label>
+                            <label>გაგრილება / კონდიცირება
+                                <input type="text" name="cooling_system" placeholder="მაგ: multisplit, ცენტრალური">
+                            </label>
+                            <label>როზეტკების და ჩამრთველების სპეციფიკა
+                                <input type="text" name="electricity_plan"
+                                    placeholder="მაგ: დამატებითი როზეტკა სამზარეულოში">
+                            </label>
                         </div>
-                        <div>
-                            <label for="garage">ავტოფარეხი (მ²):</label>
-                            <input type="text" id="garage" name="garage_area">
+
+                        <p class="group-title">ჭკვიანი სისტემები:</p>
+                        <div class="checks">
+                            <label><input type="checkbox" name="smart_home" value="smart_lighting"> Smart
+                                lighting</label>
+                            <label><input type="checkbox" name="smart_home" value="smart_climate"> Smart climate
+                                control</label>
+                            <label><input type="checkbox" name="smart_home" value="security"> Smart უსაფრთხოება</label>
+                            <label><input type="checkbox" name="smart_home" value="none"> არ მჭირდება</label>
                         </div>
                     </fieldset>
 
                     <fieldset>
-                        <legend>ტექნიკური მოთხოვნები</legend>
-                        <div>
-                            <label for="heating">გათბობის სისტემა:</label>
-                            <input type="text" id="heating" name="heating">
+                        <legend>ოჯახის/მომხმარებლის ცხოვრების სტილი</legend>
+                        <div class="form-grid two-col">
+                            <label>მოსახლეთა რაოდენობა
+                                <input type="number" name="residents_count" min="1">
+                            </label>
+                            <label>ბავშვების რაოდენობა
+                                <input type="number" name="children_count" min="0">
+                            </label>
+                            <label>შინაური ცხოველები
+                                <select name="pets">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="no">არა</option>
+                                    <option value="yes">დიახ</option>
+                                </select>
+                            </label>
+                            <label>ცხოვრების სტილი
+                                <select name="lifestyle">
+                                    <option value="">აირჩიეთ</option>
+                                    <option value="active">აქტიური</option>
+                                    <option value="calm">მშვიდი</option>
+                                    <option value="guests_often">ხშირად სტუმრები</option>
+                                    <option value="remote_work">მუშაობა სახლიდან</option>
+                                </select>
+                            </label>
                         </div>
-                        <div>
-                            <label for="cooling">გაგრილება:</label>
-                            <input type="text" id="cooling" name="cooling">
-                        </div>
-                        <div>
-                            <p>იატაკქვეშა გათბობა:</p>
-                            <input type="radio" id="floor_heat_yes" name="floor_heating" value="yes"> <label
-                                for="floor_heat_yes">დიახ</label>
-                            <input type="radio" id="floor_heat_no" name="floor_heating" value="no"> <label
-                                for="floor_heat_no">არა</label>
-                        </div>
-                        <div>
-                            <p>ჭკვიანი სახლის სისტემა:</p>
-                            <input type="radio" id="smart_yes" name="smart_home" value="yes"> <label
-                                for="smart_yes">დიახ</label>
-                            <input type="radio" id="smart_no" name="smart_home" value="no"> <label
-                                for="smart_no">არა</label>
-                        </div>
-                        <div>
-                            <label for="storage">დამატებითი სათავსოები:</label>
-                            <input type="text" id="storage" name="storage" placeholder="სათავსო / საკუჭნაო">
-                        </div>
+                        <label>ყოველდღიური ჩვევები / ფუნქციური საჭიროებები
+                            <textarea name="daily_habits" rows="4"
+                                placeholder="მაგ: დილით ვვარჯიშობთ ეზოში, ხშირად ვამზადებთ, გვჭირდება ბევრი შესანახი სივრცე..."></textarea>
+                        </label>
                     </fieldset>
 
                     <fieldset>
-                        <legend>მომხმარებლის ინფორმაცია</legend>
-                        <div>
-                            <label for="residents">მოსახლეთა რაოდენობა:</label>
-                            <input type="number" id="residents" name="residents_count">
-                        </div>
-                        <div>
-                            <label for="children">ბავშვები (რაოდენობა / არა):</label>
-                            <input type="text" id="children" name="children">
-                        </div>
-                        <div>
-                            <p>შინაური ცხოველები:</p>
-                            <input type="radio" id="pets_yes" name="pets" value="yes"> <label
-                                for="pets_yes">დიახ</label>
-                            <input type="radio" id="pets_no" name="pets" value="no"> <label for="pets_no">არა</label>
-                        </div>
-                        <div>
-                            <label for="lifestyle">ცხოვრების სტილი:</label>
-                            <input type="text" id="lifestyle" name="lifestyle" placeholder="აქტიური, მშვიდი და ა.შ.">
-                        </div>
+                        <legend> დამატებითი მოთხოვნები</legend>
+                        <label>განსაკუთრებული სურვილები / შენიშვნები
+                            <textarea name="notes" rows="6"
+                                placeholder="დაამატეთ ინფორმაცია ან დატოვეთ კომენტარი სურვილისამებრ... "></textarea>
+                        </label>
                     </fieldset>
 
-                    <fieldset>
-                        <legend>დამატებითი მოთხოვნები</legend>
-                        <label for="notes">განსაკუთრებული სურვილები / შენიშვნები:</label><br>
-                        <textarea id="notes" name="notes" rows="5" cols="40" placeholder="ჩაწერეთ აქ..."></textarea>
-                    </fieldset>
-
-                    <br>
-                    <button type="submit">მონაცემების გაგზავნა</button>
-
+                    <button type="submit">გაგზავნა</button>
                 </form>
 
             </div>

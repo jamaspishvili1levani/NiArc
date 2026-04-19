@@ -1,0 +1,131 @@
+.project-form {
+    max-width: 960px;
+    margin: 2.5rem auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(20, 20, 20, 0.08);
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+}
+
+.project-form h1 {
+    font-size: clamp(1.3rem, 2vw, 1.75rem);
+    margin-bottom: 0.4rem;
+}
+
+.form-intro {
+    margin-bottom: 1.5rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.project-form fieldset {
+    border: 1px solid rgba(23, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.project-form legend {
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0 0.45rem;
+}
+
+.form-grid {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.form-grid.two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+    color: #202020;
+}
+
+.project-form input,
+.project-form select,
+.project-form textarea {
+    width: 100%;
+    border: 1px solid #c9c9c9;
+    border-radius: 8px;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.95rem;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-form input:focus,
+.project-form select:focus,
+.project-form textarea:focus {
+    border-color: #808080;
+    box-shadow: 0 0 0 3px rgba(77, 77, 77, 0.16);
+    outline: none;
+}
+
+.group-title {
+    margin: 1rem 0 0.45rem;
+    font-weight: 600;
+}
+
+.checks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.checks label {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.45rem;
+    font-size: 0.92rem;
+}
+
+.checks input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.project-form textarea {
+    resize: vertical;
+    min-height: 92px;
+}
+
+.project-form button[type="submit"] {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    background-color: #1d1d1d;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-form button[type="submit"]:hover {
+    background-color: #303030;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .project-form {
+        margin: 1rem auto 1.5rem;
+        padding: 1rem;
+    }
+
+    .form-grid.two-col,
+    .checks {
+        grid-template-columns: 1fr;
+    }
+}

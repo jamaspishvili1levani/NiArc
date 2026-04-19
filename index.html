@@ -13,25 +13,23 @@
 <body>
 
     <aside class="side-menu" id="sideMenu">
-        <ul class="menu-links">
 
-            <nav>
+        <nav aria-label="Side navigation">
+            <ul class="menu-links">
                 <li><a href="#">Support</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about-us">About Us</a></li>
                 <li><a href="#" class="logout-text">Log out</a></li>
-            </nav>
+                <li class="menu-theme-toggle">
+                    <span>Dark Theme</span>
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </li>
+            </ul>
+        </nav>
 
-
-            <li class="menu-theme-toggle">
-                <span>Dark Theme</span>
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-            </li>
-
-        </ul>
     </aside>
 
     <header>
@@ -44,7 +42,7 @@
 
         <a href="./index.html" class="logo">NiArc</a>
 
-        <nav class="sign">
+        <nav class="sign" aria-label="Account">
             <a href="#">Sign in</a>
             <span>/</span>
             <a href="#">Sign up</a>
@@ -153,32 +151,32 @@
 
                 <div class="expertise-grid">
 
-                    <article class="ex-card">
+                    <a class="ex-card" href="./form.html">
                         <div class="ex-img"><img src="./home.png">
                         </div>
                         <div class="ex-info">
                             <h3>Home / Interior Design</h3>
                             <p>Refined indoor flow and residential comfort.</p>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="ex-card">
+                    <a class="ex-card" href="./form.html">
                         <div class="ex-img"><img src="./home.png">
                         </div>
                         <div class="ex-info">
                             <h3>Full Design</h3>
                             <p>End-to-end architectural solutions from concept to build.</p>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="ex-card">
+                    <a class="ex-card" href="./form.html">
                         <div class="ex-img"><img src="./home.png">
                         </div>
                         <div class="ex-info">
                             <h3>Landscape / Exterior Design</h3>
                             <p>Harmonizing outer structures with the natural environment.</p>
                         </div>
-                    </article>
+                    </a>
 
                 </div>
             </div>

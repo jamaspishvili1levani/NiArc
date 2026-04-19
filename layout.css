@@ -88,6 +88,10 @@ body {
     left: 0;
 }
 
+.side-menu>nav {
+    width: 100%;
+}
+
 .menu-links {
     list-style: none;
     text-align: center;
@@ -180,7 +184,7 @@ input:checked+.slider:before {
 }
 
 /* HEADER */
- 
+
 header {
     position: fixed;
     top: 0;
@@ -193,7 +197,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-} 
+}
 
 .logo {
     font-size: 2rem;
