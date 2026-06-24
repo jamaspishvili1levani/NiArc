@@ -167,6 +167,10 @@
     padding: 25px;
 }
 
+body.dark-mode .ex-info {
+    color: var(--text-main);
+}
+
 /* responsive design */
 
 @media (max-width: 1024px) {

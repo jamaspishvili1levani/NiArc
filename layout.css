@@ -46,6 +46,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    justify-self: start;
 }
 
 .burger-menu span {
@@ -72,8 +73,7 @@ body {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 350px;
-    max-width: 100%;
+    width: min(60vw, 300px);
     height: 100vh;
     background: var(--bg-main);
     border-right: 1px solid var(--border-color);
@@ -193,20 +193,24 @@ header {
     z-index: 9999;
     background-color: transparent;
     backdrop-filter: blur(2px);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
+    gap: 0.5rem;
     padding: 1rem 5%;
 }
 
 .logo {
-    font-size: 2rem;
-    letter-spacing: 2px;
+    position: relative;
+    justify-self: center;
+    grid-column: 2;
+    font-size: clamp(1.1rem, 4vw, 2rem);
+    letter-spacing: clamp(1px, 0.4vw, 2px);
     font-weight: 500;
     font-family: var(--cinzel);
-    position: relative;
     cursor: pointer;
     color: var(--text-main);
+    white-space: nowrap;
 }
 
 .logo::after {
@@ -226,10 +230,13 @@ header {
 }
 
 .sign {
+    justify-self: end;
+    grid-column: 3;
     cursor: default;
-    font-size: 1rem;
+    font-size: clamp(0.7rem, 2.5vw, 1rem);
     font-weight: 500;
     color: var(--text-main);
+    white-space: nowrap;
 }
 
 .sign a {
@@ -237,7 +244,7 @@ header {
 }
 
 .sign span {
-    margin: 0 6px;
+    margin: 0 clamp(2px, 1vw, 6px);
 }
 
 .sign a:hover {
@@ -312,6 +319,13 @@ header {
 }
 
 /* responsive design */
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.75rem 3%;
+        gap: 0.35rem;
+    }
+}
 
 @media (max-width: 1024px) {
 
